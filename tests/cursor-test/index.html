@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test cursors</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        #dot {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 5px;
+            background: red;
+            box-shadow: 0 0 0 5px blue;
+            margin: -2.5px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .area {
+            margin: 10px;
+            background: #ccc;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .c32 {
+            cursor: url('32.cur'), pointer;
+        }
+
+        .c64 {
+            cursor: url('64.cur'), pointer;
+            cursor: -webkit-image-set(url('32.cur') 1x, url('64.cur') 2x), pointer;
+            cursor: image-set(url('32.cur') 1x, url('64.cur') 2x), pointer;
+        }
+
+        .c3264 {
+            cursor: url('3264.cur'), pointer;
+        }
+
+        .c32c {
+            cursor: url('32.cur') 16 16, pointer;
+        }
+
+        .c64c {
+            cursor: url('64.cur') 32 32, pointer;
+            cursor: -webkit-image-set(url('32.cur') 1x, url('64.cur') 2x) 16 16, pointer;
+            cursor: image-set(url('32.cur') 1x, url('64.cur') 2x) 16 16, pointer;
+        }
+
+        .c3264c {
+            cursor: url('3264.cur') 32 32, pointer;
+        }
+
+        .p32 {
+            cursor: url('32.png'), pointer;
+        }
+
+        .p64 {
+            cursor: url('64.png'), pointer;
+            cursor: -webkit-image-set(url('32.png') 1x, url('64.png') 2x), pointer;
+            cursor: image-set(url('32.png') 1x, url('64.png') 2x), pointer;
+        }
+
+        .p32c {
+            cursor: url('32.png') 16 16, pointer;
+        }
+
+        .p64c {
+            cursor: url('64.png') 32 32, pointer;
+            cursor: -webkit-image-set(url('32.png') 1x, url('64.png') 2x) 16 16, pointer;
+            cursor: image-set(url('32.png') 1x, url('64.png') 2x) 16 16, pointer;
+        }
+
+        .s32 {
+            cursor: url('32.svg'), pointer;
+        }
+
+        .s64 {
+            cursor: url('64.svg'), pointer;
+            cursor: -webkit-image-set(url('32.svg') 1x, url('64.svg') 2x), pointer;
+            cursor: image-set(url('32.svg') 1x, url('64.svg') 2x), pointer;
+        }
+
+        .s32c {
+            cursor: url('32.svg') 16 16, pointer;
+        }
+
+        .s64c {
+            cursor: url('64.svg') 32 32, pointer;
+            cursor: -webkit-image-set(url('32.svg') 1x, url('64.svg') 2x) 16 16, pointer;
+            cursor: image-set(url('32.svg') 1x, url('64.svg') 2x) 16 16, pointer;
+        }
+
+        .combocur
+        {
+            cursor:
+                    url('3264.cur'),
+                    url('32.cur'),
+                    url('32.png'),
+                    url('32.svg'),
+                    pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var dot = document.getElementById('dot');
+            document.addEventListener('mousemove', function (event) {
+                dot.style.transform = 'translate(' + event.clientX + 'px, ' + event.clientY + 'px)';
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="dot"></div>
+<div class="area c32">
+    Cur32
+</div>
+<div class="area c64">
+    Cur64
+</div>
+<div class="area c3264">
+    Cur3264
+</div>
+<div class="area c32c">
+    Cur32 Coord
+</div>
+<div class="area c64c">
+    Cur64 Coord
+</div>
+<div class="area c3264c">
+    Cur3264 Coord
+</div>
+<div class="area p32">
+    Png32
+</div>
+<div class="area p64">
+    Png64
+</div>
+<div class="area p32c">
+    Png32 Coord
+</div>
+<div class="area p64c">
+    Png64 Coord
+</div>
+<div class="area s32">
+    Svg32
+</div>
+<div class="area s64">
+    Svg64
+</div>
+<div class="area s32c">
+    Svg32 Coord
+</div>
+<div class="area s64c">
+    Svg64 Coord
+</div>
+<div class="area combocur">
+    Combo
+</div>
+</body>
+</html>
