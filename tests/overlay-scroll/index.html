@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Overlay scroll test</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        html, body
+        {
+          margin: 0;
+        }
+
+        html.overflow
+        {
+          overflow: hidden;
+        }
+
+        body
+        {
+          overflow-y: scroll;
+        }
+
+        .content
+        {
+          font-size: 30px;
+        }
+
+        .overlay
+        {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: rgba(0,0,0,0.5);
+          visibility: hidden;
+        }
+
+        .overlay.visible
+        {
+          visibility: visible;
+        }
+
+        #trigger
+        {
+          position: sticky;
+          top: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="trigger">Overlay</button>
+    <div class="overlay">
+      <div class="overlay--content">
+        Overlay content
+      </div>
+    </div>
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vel libero incidunt cum esse in nobis, a dignissimos voluptas deserunt, nemo eius praesentium dolor eveniet hic! Adipisci deleniti illum reprehenderit.
+      Ex itaque cum iusto dolores sapiente velit quos numquam enim odit maiores, repudiandae omnis tempora quibusdam sunt ratione harum consectetur, quae reprehenderit consequuntur corrupti rerum similique nisi illo neque. Quos?
+      Aspernatur laborum adipisci ullam saepe dicta, deleniti beatae esse cum fuga magni perspiciatis impedit nostrum earum cumque accusamus provident voluptates porro laudantium molestiae doloribus possimus tempore ipsum. Eius, voluptate commodi!
+      Voluptatibus, consequatur aut! Fuga beatae mollitia ipsam est molestiae, voluptatum ea odit. Debitis quis nisi ipsa reprehenderit dolorum. Distinctio, aspernatur autem deserunt nulla molestiae ipsa illum dolor provident maxime ex.
+      Veniam repudiandae libero delectus. Eos in debitis quibusdam molestias maiores, consequuntur rerum, nostrum tenetur nemo accusamus cumque sit molestiae cupiditate tempora voluptatibus dignissimos, totam ad asperiores nesciunt deserunt facilis quae.
+      Labore deleniti ratione ex quod culpa adipisci illum necessitatibus minima fugit saepe obcaecati, iure, rerum quis pariatur consequuntur blanditiis officiis, cupiditate repellat at nobis ad? Ipsa nesciunt doloribus veritatis suscipit?
+      Praesentium rem voluptates adipisci blanditiis ab, eum cupiditate tempore, hic saepe, commodi quos. Earum accusantium omnis nulla, laborum ratione laudantium, eaque voluptates beatae officiis placeat error, nihil nobis recusandae tempora?
+      Quos ex maiores officia at sunt tenetur. Libero eligendi voluptate sequi in perspiciatis veniam laudantium exercitationem tempore sed quos eum officiis quasi officia eos laboriosam minus, doloribus est, ratione vitae.
+      Quae ipsam adipisci tempore perferendis asperiores, recusandae voluptate blanditiis, illo magni facilis voluptatem ea, molestias repellat porro magnam non nam earum culpa ducimus officiis libero saepe sint! Eius, consectetur dolor.
+      Accusamus cum dicta ipsa enim obcaecati aperiam aut optio doloremque, repudiandae sequi unde sunt vero tenetur porro nam reprehenderit vitae neque. Consectetur ab veniam magni voluptatem voluptatibus? Itaque, quasi fugit.
+      Minus itaque nobis repudiandae, velit dolor accusamus optio recusandae autem at quas vel voluptas libero unde ab impedit, dolore voluptate sed veniam suscipit pariatur in natus! Fuga eveniet ipsa obcaecati!
+      Distinctio, deserunt vitae illum maiores officia fugit aspernatur est. Eius ad at illo laudantium sequi facilis voluptatum. Veritatis debitis voluptatem eos praesentium sapiente eligendi, explicabo quos tempora provident? Minus, fugit!
+      Tempore, reprehenderit cum. Quidem id neque fugit illo sunt at labore, impedit excepturi reprehenderit dolores deleniti ipsum hic omnis tenetur eum corporis maxime perspiciatis tempore perferendis fugiat atque. Quidem, sit.
+      Recusandae laborum dicta cum, ut velit autem cupiditate soluta eius quae earum obcaecati numquam quos modi molestiae beatae dolore ratione doloremque? Nulla, beatae neque culpa quae incidunt dolor illo ea.
+      Facere eius veniam dignissimos incidunt error est blanditiis earum dolores quo in nobis voluptas et sapiente odio aut, officia similique nisi ipsum. Non iure a tempore ullam suscipit porro voluptatum?
+      Magnam suscipit quisquam iste, fugit natus obcaecati debitis odit repellat dolorum optio aliquam quos explicabo error itaque aspernatur voluptatibus sit veniam eveniet beatae ea. Quia et reiciendis hic laboriosam quaerat.
+      Id quasi numquam deleniti ipsam itaque porro rem tempore assumenda molestias, ut ratione est. Fugiat magnam magni ad voluptates! Excepturi architecto voluptatem tempora est cupiditate odio doloribus dolorum facere nobis?
+      Reiciendis dolores, sit quis harum qui minus ipsa labore fugiat animi possimus consequatur corporis autem ex excepturi eaque obcaecati, accusamus, reprehenderit recusandae odit tempora tempore? Iure dignissimos in consequuntur ducimus?
+      Cum ex dolore odio modi nisi reprehenderit, similique sequi fugit dolorum sed enim omnis repellendus delectus magnam eaque! Ipsa laborum accusamus ullam beatae magni saepe minima minus qui recusandae repellendus.
+      Nobis error consequatur labore voluptate culpa. Suscipit nisi quod libero labore laborum! Illum illo quaerat enim totam dolor sunt at corporis, ipsum aperiam, magni fugiat debitis sapiente nulla! Neque, facere.
+    </div>
+    <script>
+        var overlay = document.querySelector('.overlay');
+        document.getElementById('trigger').addEventListener('click', toggle);
+        overlay.addEventListener('click', toggle);
+
+        function toggle(e) {
+          document.documentElement.classList.toggle('overflow');
+          overlay.classList.toggle('visible');
+        }
+    </script>
+</body>
+</html>
